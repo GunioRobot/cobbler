@@ -1,7 +1,7 @@
 # cobbler module configuration file
 # =================================
 
-# authentication: 
+# authentication:
 # what users can log into the WebUI and Read-Write XMLRPC?
 #
 # choices:
@@ -24,7 +24,7 @@
 [authentication]
 module = $authn_module
 
-# authorization: 
+# authorization:
 # once a user has been cleared by the WebUI/XMLRPC, what can they do?
 #
 # choices:
@@ -77,7 +77,7 @@ module = $dns_module
 #
 # for more information:
 # https://fedorahosted.org/cobbler/wiki/ManageDhcp
-  
+
 [dhcp]
 module = $dhcp_module
 

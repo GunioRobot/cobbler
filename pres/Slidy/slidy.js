@@ -269,7 +269,7 @@ function startup()
    {
       var slide = slides[slidenum];
       slide.style.position = "absolute";
-   
+
       if (slidenum > 0)
       {
          setVisibilityAllIncremental("visible");
@@ -580,7 +580,7 @@ function scrollXOffset()
    if (window.pageXOffset)
       return self.pageXOffset;
 
-   if (document.documentElement && 
+   if (document.documentElement &&
              document.documentElement.scrollLeft)
       return document.documentElement.scrollLeft;
 
@@ -596,7 +596,7 @@ function scrollYOffset()
    if (window.pageYOffset)
       return self.pageYOffset;
 
-   if (document.documentElement && 
+   if (document.documentElement &&
              document.documentElement.scrollTop)
       return document.documentElement.scrollTop;
 
@@ -707,10 +707,10 @@ function adjustObjectDimensions(width, height)
 
       if (mimeType == "image/svg+xml" || mimeType == "application/x-shockwave-flash")
       {
-         if ( !obj.initialWidth ) 
+         if ( !obj.initialWidth )
             obj.initialWidth = obj.getAttribute("width");
 
-         if ( !obj.initialHeight ) 
+         if ( !obj.initialHeight )
             obj.initialHeight = obj.getAttribute("height");
 
          if ( obj.initialWidth && obj.initialWidth.charAt(obj.initialWidth.length-1) == "%" )
@@ -752,7 +752,7 @@ function keyDown(event)
     if (!event)
       var event = window.event;
 
-    // kludge around NS/IE differences 
+    // kludge around NS/IE differences
     if (window.event)
        key = window.event.keyCode;
     else if (event.which)
@@ -823,7 +823,7 @@ function keyDown(event)
             fold(outline);
           else
             unfold(outline);
-          
+
          return cancel(event);
        }
     }
@@ -1342,7 +1342,7 @@ function wrapImplicitSlides()
          node = document.body.removeChild(node);
          div.appendChild(node);
          node = next;
-      } 
+      }
    }
 }
 
@@ -2261,7 +2261,7 @@ function gotoTocEntry(event)
   if (!event)
     var event = window.event;
 
-  // kludge around NS/IE differences 
+  // kludge around NS/IE differences
   if (window.event)
     key = window.event.keyCode;
   else if (event.which)
@@ -2400,13 +2400,13 @@ function tableOfContents()
     e||(e=window.event);
     hideTableOfContents();
     stopPropagation(e);
-    
+
     if (e.cancel != undefined)
       e.cancel = true;
-      
+
     if (e.returnValue != undefined)
       e.returnValue = false;
-      
+
     return false;
   };
 
@@ -2669,7 +2669,7 @@ function isBlock(elem)
           tag == "LI" || tag == "TABLE" || tag == "PRE" ||
           tag == "H1" || tag == "H2" || tag == "H3" ||
           tag == "H4" || tag == "H5" || tag == "H6" ||
-          tag == "BLOCKQUOTE" || tag == "ADDRESS"; 
+          tag == "BLOCKQUOTE" || tag == "ADDRESS";
 }
 
 function getElementStyle(elem, IEStyleProp, CSSStyleProp)

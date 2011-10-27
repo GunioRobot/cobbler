@@ -67,22 +67,22 @@ Url: http://fedorahosted.org/cobbler
 
 %description
 
-Cobbler is a network install server.  Cobbler 
-supports PXE, virtualized installs, and 
-reinstalling existing Linux machines.  The last two 
-modes use a helper tool, 'koan', that 
+Cobbler is a network install server.  Cobbler
+supports PXE, virtualized installs, and
+reinstalling existing Linux machines.  The last two
+modes use a helper tool, 'koan', that
 integrates with cobbler.  There is also a web interface
-'cobbler-web'.  Cobbler's advanced features 
-include importing distributions from DVDs and rsync 
-mirrors, kickstart templating, integrated yum 
-mirroring, and built-in DHCP/DNS Management.  Cobbler has 
+'cobbler-web'.  Cobbler's advanced features
+include importing distributions from DVDs and rsync
+mirrors, kickstart templating, integrated yum
+mirroring, and built-in DHCP/DNS Management.  Cobbler has
 a XMLRPC API for integration with other applications.
 
 %prep
 %setup -q
 
 %build
-%{__python} setup.py build 
+%{__python} setup.py build
 
 %install
 test "x$RPM_BUILD_ROOT" != "x" && rm -rf $RPM_BUILD_ROOT
@@ -277,7 +277,7 @@ test "x$RPM_BUILD_ROOT" != "x" && rm -rf $RPM_BUILD_ROOT
 %dir /var/lib/cobbler/loaders/
 /var/lib/cobbler/loaders/zpxe.rexx
 %defattr(660,root,root)
-%config(noreplace) /etc/cobbler/users.digest 
+%config(noreplace) /etc/cobbler/users.digest
 
 %defattr(664,root,root)
 %config(noreplace) /var/lib/cobbler/cobbler_hosts
@@ -315,7 +315,7 @@ Url: http://fedorahosted.org/cobbler/
 %description -n koan
 
 Koan stands for kickstart-over-a-network and allows for both
-network installation of new virtualized guests and reinstallation 
+network installation of new virtualized guests and reinstallation
 of an existing system.  For use with a boot-server configured with Cobbler
 
 %files -n koan

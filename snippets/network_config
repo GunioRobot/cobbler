@@ -15,7 +15,7 @@
     #end for
     #set $i = -1
     #if $configbymac
-# Using "new" style networking config, by matching networking information to the physical interface's 
+# Using "new" style networking config, by matching networking information to the physical interface's
 # MAC-address
 %include /tmp/pre_install_network_config
     #else
@@ -28,22 +28,22 @@
             #set $ip       = $idata["ip_address"]
             #set $netmask  = $idata["subnet"]
             #set $bonding  = $idata["bonding"]
-            #if $vlanpattern.match($iname) or $bonding == "master" 
+            #if $vlanpattern.match($iname) or $bonding == "master"
                 ## If this is a VLAN interface, skip it, anaconda doesn't know
                 ## about VLANs.
                 #set $is_vlan = "true"
             #else
                 #set $is_vlan = "false"
                 ## Only up the counter on physical interfaces!
-                #set $i = $i + 1 
+                #set $i = $i + 1
             #end if
             #if $mac != "" or $ip != "" and $is_vlan == "false"
                 #if $static == True:
                     #if $ip != "":
                         #set $network_str = "--bootproto=static"
-                        #set $network_str = $network_str + " --ip=" + $ip 
+                        #set $network_str = $network_str + " --ip=" + $ip
                         #if $netmask != "":
-                            #set $network_str = $network_str + " --netmask=" + $netmask 
+                            #set $network_str = $network_str + " --netmask=" + $netmask
                         #end if
                         #if $gateway != "":
                             #set $network_str = $network_str + " --gateway=" + $gateway
@@ -77,7 +77,7 @@ network $network_str --device=$iname
 #else
 ## profile based install so just provide one interface for starters
 #if $getVar('os_version','').find("rhel3") == -1
-network --bootproto=dhcp --device=eth0 --onboot=on  
+network --bootproto=dhcp --device=eth0 --onboot=on
 #else
 network $network_str --device=$iname
 #end if

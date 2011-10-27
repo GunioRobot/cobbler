@@ -12,7 +12,7 @@ keys_found=no
 SHORTDIR=${SEARCHDIR#/var}
 if [ $SHORTDIR = $SEARCHDIR ]; then
 	SHORTDIR=''
-fi	
+fi
 insmod /lib/jbd.o
 insmod /lib/ext3.o
 
@@ -73,9 +73,9 @@ if [ "$keys_found" = "no" ]; then
         # Activate any VG we found
         lvm vgchange -ay $vg
     done
-    
+
     DISKS=$(lvm lvs | tail -n +2 | awk '{ print "/dev/" $2 "/" $1 }')
-    findkeys    
+    findkeys
 
     # And clean up..
     for vg in $vgs; do

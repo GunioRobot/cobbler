@@ -52,7 +52,7 @@ $SNIPPET('func_install_if_enabled')
 
 %post
 $SNIPPET('log_ks_post')
-# Start yum configuration 
+# Start yum configuration
 $yum_config_stanza
 # End yum configuration
 $SNIPPET('post_install_kernel_options')

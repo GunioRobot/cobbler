@@ -12,7 +12,7 @@ legend { margin: 0px; padding-bottom: 3px; }
 hr { margin-top: -2px; height: 1px; }
 fieldset { border: 0px; padding: 0px; margin: 0px; }
 img { border: 0px; }
-ul { list-style-position: outside; list-style-type: none; overflow: hidden; } 
+ul { list-style-position: outside; list-style-type: none; overflow: hidden; }
 
 .action { cursor: pointer; }
 .warn { color: #990000; font-weight: bold; font-size: 1.0em; }
@@ -28,7 +28,7 @@ div.container { float: left; margin: 0px; padding: 0px; min-width: 400px; width:
 #menubar select { width: 102px; }
 
 #listactions { padding-left: 11px; width: 140px; }
-#listactions ul { padding: 0px 0px 0px 2px; margin: 0px; } 
+#listactions ul { padding: 0px 0px 0px 2px; margin: 0px; }
 #listactions ul li { padding-left: 8px; }
 
 #listitems thead { background-color: #306CAC; color: #dddddd; font-weight: bold; }

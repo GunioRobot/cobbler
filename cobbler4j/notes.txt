@@ -1,5 +1,5 @@
 // this file contains some things left over from refactoring that I'm going
-// to adapt and likely kill.  It was better than commenting them out but I 
+// to adapt and likely kill.  It was better than commenting them out but I
 // don't want to get rid of these things yet.
 
 /**
@@ -34,29 +34,29 @@ import java.util.Set;
 
 
 /**
- * Base class has attributes common to 
+ * Base class has attributes common to
  * distros, profiles, system records
  * @author paji
  * @version $Rev$
  */
 public abstract class CobblerObject {
-    
+
     protected String handle;
     protected Map<String, Object> dataMap = new HashMap<String, Object>();
-    protected CobblerConnection client;    
+    protected CobblerConnection client;
 
     /**
-     * Helper method used by all cobbler objects to 
+     * Helper method used by all cobbler objects to
      * return a version of themselves by UID
      * @see org.cobbler.Distro.lookupById for example usage..
-     * 
+     *
      * @param client the Cobbler Connection
      * @param id the UID of the distro/profile/system record
      * @param findMethod the find xmlrpc method, eg: find_distro
-     * @return true if the cobbler object was found. 
+     * @return true if the cobbler object was found.
      */
 
-    protected static Map<String, Object> lookupDataMapById(CobblerConnection client, 
+    protected static Map<String, Object> lookupDataMapById(CobblerConnection client,
                              String id, String findMethod) {
         if (id == null) {
             return null;
@@ -92,20 +92,20 @@ public abstract class CobblerObject {
         return objects;
 
     }
-    
+
 
     /**
-     * Helper method used by all cobbler objects to 
+     * Helper method used by all cobbler objects to
      * return a Map of themselves by name.
      * @see org.cobbler.Distro.lookupByName for example usage..
      * @param client  the Cobbler Connection
      * @param name the name of the cobbler object
      * @param lookupMethod the name of the xmlrpc
-     *                       method to lookup: eg get_profile for profile 
+     *                       method to lookup: eg get_profile for profile
      * @return the Cobbler Object Data Map or null
      */
 
-    protected static Map <String, Object> lookupDataMapByName(CobblerConnection client, 
+    protected static Map <String, Object> lookupDataMapByName(CobblerConnection client,
                                     String name, String lookupMethod) {
         Map <String, Object> map = (Map<String, Object>)client.
                                         invokeMethod(lookupMethod, name);
@@ -114,26 +114,26 @@ public abstract class CobblerObject {
         }
         return map;
     }
-    
+
     protected abstract void invokeModify(String key, Object value);
     protected abstract void invokeSave();
     protected abstract boolean invokeRemove();
     protected abstract String invokeGetHandle();
     protected abstract void reload();
     protected abstract void invokeRename(String newName);
-    
+
     protected String getHandle() {
         if (handle == null) {
             handle = invokeGetHandle();
         }
         return handle;
     }
-    
+
     protected void modify(String key, Object value) {
         // FIXME: invokeModify(key, value);
         dataMap.put(key, value);
     }
-    
+
     /**
      * calls save object to complete the commit
      */
@@ -149,11 +149,11 @@ public abstract class CobblerObject {
     public boolean remove() {
         return invokeRemove();
     }
-    
+
     //public int getDepth() {
     //    return (Integer)dataMap.get(DEPTH);
     //}
-    
+
     /**
      * @param depthIn the depth to set
      */
@@ -198,7 +198,7 @@ public abstract class CobblerObject {
         return string.toString();
     }
 
-    
+
     /**
      * @param kernelOptionsIn the kernelOptions to set
      */
@@ -242,7 +242,7 @@ public abstract class CobblerObject {
         return toRet;
     }
 
-    
+
     /**
      * @return the kickstart Metadata
      */
@@ -250,7 +250,7 @@ public abstract class CobblerObject {
     //    return (Map<String, Object>)dataMap.get(KS_META);
     //}
 
-    
+
     /**
      * @param kernelMetaIn the kernelMeta to set
      */
@@ -258,7 +258,7 @@ public abstract class CobblerObject {
     //    modify(SET_KS_META, kernelMetaIn);
     //}
 
-    
+
     /**
      * @return the name
      */
@@ -276,12 +276,12 @@ public abstract class CobblerObject {
     //    handle = getHandle();
     //    reload();
     // }
-    
+
     //protected void update() {
     //    // FIXME: comments?
-    //    client.invokeTokenMethod("update");            
+    //    client.invokeTokenMethod("update");
     //}
-    
+
     public String toString() {
         return "$ObjectType :: " + dataMap;
     }
@@ -305,7 +305,7 @@ public abstract class CobblerObject {
     protected void invokeRename(String newName) {
         client.invokeTokenMethod(getRenameFunctionName(), getHandle(), newName);
     }
-    
+
     public void reload() {
         $ObjectType obj = lookupById(client, getId());
         map = obj.dataMap;
@@ -406,7 +406,7 @@ public class Network {
     public String getSubnet() {
         return subnet;
     }
-    
+
     /**
      * @param subnetIn The subnet to set.
      */

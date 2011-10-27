@@ -23,13 +23,13 @@ function intf_update_visibility()
     value = document.getElementById("bonding").value
     if (value == "slave") {
         is_slave = true;
-    }    
+    }
     else if (value == "master") {
         is_master = true;
     }
 
     is_static = document.getElementById("static").checked
- 
+
     intf_enable_field("static",!is_slave)
     intf_enable_field("ip_address",(!is_slave))
     intf_enable_field("subnet",(!is_slave) && is_static)
@@ -57,7 +57,7 @@ function on_interface_change()
     load_intf()
 }
 
-function populate_widgets() 
+function populate_widgets()
 {
 
     var buf = "";
@@ -113,7 +113,7 @@ function on_interface_add()
    var new_option = new Option(iname,iname)
    interfaces.options[ilen] = new_option
    interfaces.selectedIndex = ilen
-   on_interface_change() // explicit firing required   
+   on_interface_change() // explicit firing required
 }
 
 function on_interface_delete()
@@ -124,8 +124,8 @@ function on_interface_delete()
    if (interfaces.length == 1) {
       alert("systems must always have at least one interface")
       return
-   } 
-   
+   }
+
    clear_intf()
    for (i = interfaces.options.length - 1; i>=0; i--) {
      if (interfaces.options[i].value == selected) {
@@ -135,7 +135,7 @@ function on_interface_delete()
    interface_table[selected]["present"] = 0
    interfaces.selectedIndex = 0
    load_intf()
-} 
+}
 
 function get_enabled_field(field,enabled)
 {
@@ -146,7 +146,7 @@ function get_enabled_field(field,enabled)
     }
 }
 
-function save_intf(which) 
+function save_intf(which)
 {
     // this populates the interface widget with the data for the currently selected interface
     // and is called when the user picks a certain interface from the drop-down
@@ -207,7 +207,7 @@ function load_intf()
     // FIXME: can we load this up from the template data?
     intf = get_selected_interface()
     document.getElementById("mac_address").value    = interface_table[intf]["mac_address"]
-    document.getElementById("bonding").value        = interface_table[intf]["bonding"]  
+    document.getElementById("bonding").value        = interface_table[intf]["bonding"]
     document.getElementById("bonding_master").value = interface_table[intf]["bonding_master"]
     document.getElementById("bonding_opts").value   = interface_table[intf]["bonding_opts"]
     document.getElementById("static").checked       = interface_table[intf]["static"]
@@ -219,7 +219,7 @@ function load_intf()
     document.getElementById("virt_bridge").value    = interface_table[intf]["virt_bridge"]
     document.getElementById("present").value        = interface_table[intf]["present"]
     document.getElementById("original").value       = interface_table[intf]["original"]
-    
+
     intf_update_visibility()
 }
 
@@ -306,7 +306,7 @@ function populate_interfaces() {
         var new_option = new Option("{{ x }}","{{ x }}")
         interfaces.options[ilen] = new_option
         interfaces.selectedIndex = ilen
-        ilen = ilen + 1 
+        ilen = ilen + 1
     {% endfor %}
     interfaces.selectedIndex = 0
     document.getElementById("static").onchange=intf_update_visibility;
@@ -388,7 +388,7 @@ $(document).ready(function()
                 {% else %}
           <option value="{{ choice }}">{{ choice }}</A>
                 {% endifequal %}
-              {% endfor %} 
+              {% endfor %}
           </select>
           {% endifequal %}
           {% ifequal item.html_element "multiselect" %}
@@ -399,7 +399,7 @@ $(document).ready(function()
               {% else %}
           <option value="{{ choice }}">{{ choice }}</a>
               {% endsmart_if %}
-            {% endfor %} 
+            {% endfor %}
           </select>
           {% endifequal %}
           <sup><em>{{ item.tooltip }}</em></sup>
@@ -430,7 +430,7 @@ $(document).ready(function()
     {% endif %}
     </td>
     </tr>
-    
+
 
 
 </table>

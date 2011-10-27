@@ -28,7 +28,7 @@ Provides Ruby bindings to interact with a Cobbler server.
 
 %build
 
-%check 
+%check
 
 cd %{installroot}
 
@@ -62,8 +62,8 @@ rm -rf %{buildroot}
 %{gemdir}/cache/%{gemname}-%{version}.gem
 %{gemdir}/specifications/%{gemname}-%{version}.gemspec
 
-%doc %{geminstdir}/COPYING 
-%doc %{geminstdir}/NEWS 
+%doc %{geminstdir}/COPYING
+%doc %{geminstdir}/NEWS
 %doc %{geminstdir}/README
 
 %{geminstdir}/config/cobbler.yml
@@ -90,14 +90,14 @@ rm -rf %{buildroot}
 
 * Wed Aug 13 2008 Darryl Pierce <dpierce@redhat.com> - 0.0.1-3
 - Added caching for the auth_token to prevent extraneous calls to login.
-- Reworked and refined how cobbler_collection fields are processed, adding 
+- Reworked and refined how cobbler_collection fields are processed, adding
   support for both array and has properties.
 - Rewrote the documentation for Cobbler::Base to make it easier to understand
   how to extend it to support other Cobbler types.
 - Refactored the examples to clean up the code.
 
 * Wed Aug 13 2008 Darryl Pierce <dpierce@redhat.com> - 0.0.1-2
-- Removed markup of cobbler.yml and a config file. Fixed a few small bugs 
+- Removed markup of cobbler.yml and a config file. Fixed a few small bugs
   in the code for using it as a gem.
 
 * Mon Aug 04 2008 Darryl Pierce <dpierce@redhat.com> - 0.0.1-1

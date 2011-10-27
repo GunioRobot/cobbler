@@ -23,7 +23,7 @@ configure-stamp:
 
 build: build-stamp
 
-build-stamp: configure-stamp  
+build-stamp: configure-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
@@ -32,7 +32,7 @@ build-stamp: configure-stamp
 
 	touch $@
 
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp configure-stamp
@@ -40,16 +40,16 @@ clean:
 	# Add here commands to clean up after the build process.
 	$(MAKE) clean
 
-	dh_clean 
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_clean -k
 	dh_installdirs
 
 	# Add here commands to install the package into debian/cobbler.
-	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/cobbler 
+	$(MAKE) debinstall DESTDIR=$(CURDIR)/debian/cobbler
 
 
 # Build architecture-independent files here.
@@ -62,7 +62,7 @@ binary-indep: build install
 	dh_installexamples
 #	dh_install
 #	dh_installmenu
-#	dh_installdebconf	
+#	dh_installdebconf
 #	dh_installlogrotate
 #	dh_installemacsen
 #	dh_installpam

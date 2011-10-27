@@ -7,7 +7,7 @@
             <classpath>
                 <pathelement location="build"/>
             </classpath>
-        </javac>  
+        </javac>
         <jar destfile="cobbler4j.jar" basedir="build">
             <manifest>
                 <attribute name="Main-Class" value="org.fedorahosted.cobbler.Test"/>

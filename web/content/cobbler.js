@@ -41,7 +41,7 @@ function go_go_gadget() {
     setInterval(get_latest_task_info, 2000)
     try {
        page_onload()
-    } 
+    }
     catch (error) {
     }
 }

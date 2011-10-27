@@ -4,9 +4,9 @@ public class Test {
 
   public static final String user = "testing";
   public static final String pass = "testing";
-  
+
   public static void main(String[] args) {
-  
+
       if (args.length < 1) {
           throw new RuntimeException("API endpoint required");
       }

@@ -24,7 +24,7 @@ Cobbler CHANGELOG
 - (BUGF) Have cobbler check look for more SELinux things to do
 - (BUGF) Fix saving of "static" network field in webapp
 - (BUGF) Deepcopy interfaces to prevent copying of interface data
- 
+
 - Sep 17 2009 - for 2.0 release
 - Development release start
 - (FEAT) add two new default flags to yum reposync (-m and -d) for grabbing comps automatically and also deleting duplicate RPMs
@@ -39,7 +39,7 @@ Cobbler CHANGELOG
 - (BUGF) don't add port number to http_server if it's 80.
 - (FEAT) support F11 fence-agent paths
 - (BUGF) koan autodetection now can gather MACs/IPs for bridged interfaces better
-- (FEAT) F11 and RAID support for keep_ssh_host_keys 
+- (FEAT) F11 and RAID support for keep_ssh_host_keys
 - (FEAT) keep_ssh_host_keys gets F11+RAID support
 - (FEAT) per-task logging
 - (BUGF) validateks checkes /every/ kickstart, as different variables may be present
@@ -64,7 +64,7 @@ Cobbler CHANGELOG
 
 - 1.6.7
 - (BUGF/koan) Workaround for a bug in ybin, use --verbose for happy return codes
-- (BUGF/cobbler) patch to redhat_register for Satellite 
+- (BUGF/cobbler) patch to redhat_register for Satellite
 
 1.6.6 (for more accurate listing, see release16 branch)
 - (BUGF) don't use -m option for drac unless power_id is set
@@ -79,7 +79,7 @@ Cobbler CHANGELOG
 - (BUGF) don't use json on python x<=2.3 since we know it's simplejson x<2.0, which has unicode issues
 - (FEAT) support F-11 imports
 - (BUGF) don't add koan virtual interfaces for vlan tagged interfaces
-- (BUGF) pair PAE and non-PAE content in imports better 
+- (BUGF) pair PAE and non-PAE content in imports better
 - (BUGF) don't try to scp /etc/cobbler/*.ks on replicate, this is an old path
 - (BUGF) set proper umask on .mtime files
 - (BUGF) fix koan error with unspecified arch using --kexec
@@ -120,7 +120,7 @@ Cobbler CHANGELOG
 - (BUGF) make cobbler package Arch for now, require syslinux where it makes sense only.  To be changed in later release to download it from intertubes.
 
 - Mon Mar 30 2009 - 1.6.2
-- (BUGF) Fix for cache cleanup problem in cobblerd 
+- (BUGF) Fix for cache cleanup problem in cobblerd
 
 - Fri Mar 27 2009 - 1.6.1
 - (FEAT) Improved anaconda monitoring code
@@ -202,7 +202,7 @@ Cobbler CHANGELOG
 - (BUGF) ensure that directories exist when installing a template file
 - (BUGF) fix for typo in network config snippet
 - (BUGF) fix for func integration script (should overwrite config, not append)
-- (BUGF) append nameservers and gateway, if set, for buildiso 
+- (BUGF) append nameservers and gateway, if set, for buildiso
 
 - Fri Jan 09 2009 - 1.4.1
 - (BUGF) Cobbler check looks for right httpd on SUSE
@@ -253,7 +253,7 @@ Cobbler CHANGELOG
 - (FEAT) --environment parameter added to reposync
 - (BUGF) have triggers ignore dotfiles so directories can be version controlled (and so on)
 - (FEAT) init scripts and specfiles now install on SuSE
-- (TEST) added remote tests, moved existing unit tests to api.py methods 
+- (TEST) added remote tests, moved existing unit tests to api.py methods
 - (FEAT) import can auto assign kickstarts based on distro (feature for beaker)
 - (FEAT) import now saves the dot version of the OS in the comment field
 - (FEAT) import now adds tree build time
@@ -322,7 +322,7 @@ Cobbler CHANGELOG
 - (BUGF) add named_conf setting to settings
 
 - Tue Sep 02 2008 - 1.2.1
-- (BUGF) fix merge problem with 1.2 
+- (BUGF) fix merge problem with 1.2
 
 - Fri Aug 29 2008 - 1.2.0
 - (FEAT) All development work from 1.X merged in
@@ -379,7 +379,7 @@ Cobbler CHANGELOG
 - cleanup some stock kickstarts so we always use $kickstart_start
 - hook ctrl+c during serializer writes to prevent possible corruption of data in /var/lib/cobbler
 - added 'serializer_catalog' as the new default serializer.  It is backward compatible and much faster.
-- removed serializer_shelve 
+- removed serializer_shelve
 - webui page lookups don't load the full object collection
 - systems can also inherit from images
 - changes to PXE images directly
@@ -449,7 +449,7 @@ Cobbler CHANGELOG
 - cli has different semantics between "add" and "edit" now for safety reasons
 - cobbler wants to keep IPs/MACs unique now in configuration (can be disabled)
 - added --clobber option to allow add to overwrite existing objects (for scripts)
-- updated/tested kerberos support for those needing to auth against it 
+- updated/tested kerberos support for those needing to auth against it
 - update menu.c32 to 3.62 to allow for timeouts during menu (and future submenu)
 - update PXE defaults to invoke menu.c32 automatically w/ timeout
 - removed dependency on rhpl
@@ -532,7 +532,7 @@ Cobbler CHANGELOG
 
 * Mon Dec 10 2007 - 0.7.0
 - Testing branch
-- Fix bug related to <<inherit>> and kickstart args 
+- Fix bug related to <<inherit>> and kickstart args
 - Make CLI functions modular and use optparse
 - Quote wget args to avoid creating stray files on target system
 - Support Xen FV as virt type (requires F8+)
@@ -584,8 +584,8 @@ Cobbler CHANGELOG
 - added BuildRequires to help build on other platforms
 - relocate cgi-bin files to cgi-bin/cobbler for namespacing
 - fix syslog logging for systems not in the cobbler DB.
-- fix bug in which non-lowercase intermediate objects could be deleted 
- 
+- fix bug in which non-lowercase intermediate objects could be deleted
+
 * Thu Aug 30 2007 - 0.6.1
 - re enable --resolve in yumdownloader (cobbler repo mgmt feature)
 - fix get_distros_for_koan API function in cobblerd (not used by koan)
@@ -604,7 +604,7 @@ Cobbler CHANGELOG
 - allow basic usage of Cheetah variables in config files @@server@@, etc.
 - fix auto-repo attachment for distros with split trees (i.e. RHEL5)
 
-* Thu Aug 09 2007 - 0.6.0 
+* Thu Aug 09 2007 - 0.6.0
 - bugfix in error path in "cobbler check"
 - stable release for 0.5.x
 
@@ -648,7 +648,7 @@ Cobbler CHANGELOG
   (ex: cobbler and koan from FC6extras, w/o games).
 - More consistant naming on imports, regardless of data source.
 - Teach cobbler to remove .olddata dirs, which can happen if createrepo crashes or is killed mid-process
-- Default yum_core_repos_from_server to 0 
+- Default yum_core_repos_from_server to 0
 - Implemented triggers for add/delete commands
 - BootAPI and Config object classes are now Borg patterned to prevent duplication of config info from the API.
 - cobbler_syslogd -> cobblerd, now has XMLRPC component for koan >= 0.2.9 clients.  Old clients still work.

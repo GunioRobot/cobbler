@@ -26,26 +26,26 @@ import java.util.Set;
 
 
 /**
- * Base class has attributes common to 
+ * Base class has attributes common to
  * distros, profiles, system records
  * @author paji
  * @version $Rev$
  */
 public abstract class CobblerObject {
-    
+
     protected String handle;
     protected HashMap dataMap = new HashMap();
-    protected CobblerConnection client;    
+    protected CobblerConnection client;
 
     /**
-     * Helper method used by all cobbler objects to 
+     * Helper method used by all cobbler objects to
      * return a version of themselves by UID
      * @see org.cobbler.Distro.lookupById for example usage..
-     * 
+     *
      * @param client the Cobbler Connection
      * @param id the UID of the distro/profile/system record
      * @param findMethod the find xmlrpc method, eg: find_distro
-     * @return true if the cobbler object was found. 
+     * @return true if the cobbler object was found.
      */
 
     // FIXME: generalize lookup function? "by id" seems redundant
@@ -86,21 +86,21 @@ public abstract class CobblerObject {
         //return objects;
         return null;
     }
-    
+
 
     /**
-     * Helper method used by all cobbler objects to 
+     * Helper method used by all cobbler objects to
      * return a Map of themselves by name.
      * @see org.cobbler.Distro.lookupByName for example usage..
      * @param client  the Cobbler Connection
      * @param name the name of the cobbler object
      * @param lookupMethod the name of the xmlrpc
-     *                       method to lookup: eg get_profile for profile 
+     *                       method to lookup: eg get_profile for profile
      * @return the Cobbler Object Data Map or null
      */
 
     // FIXME: refactor?
-    //protected static Map <String, Object> lookupDataMapByName(CobblerConnection client, 
+    //protected static Map <String, Object> lookupDataMapByName(CobblerConnection client,
     //                                String name, String lookupMethod) {
     //    Map <String, Object> map = (Map<String, Object>)client.
     //                                    invokeMethod(lookupMethod, name);
@@ -109,7 +109,7 @@ public abstract class CobblerObject {
     //    }
     //    return map;
     //}
-    
+
     protected void modify(String key, Object value) {
         // FIXME: this should modify the datamap and then have seperate 'commit'
         // semantics all in one XMLRPC command, not many with server-side state
@@ -117,7 +117,7 @@ public abstract class CobblerObject {
         // FIXME: invokeModify(key, value);
         dataMap.put(key, value);
     }
-    
+
     protected void modify(String key, Object value, String interfaceName) {
         // FIXME: create interface hash if not already here
         HashMap interfaces = (HashMap) dataMap.get((Object)"interfaces");
@@ -125,18 +125,18 @@ public abstract class CobblerObject {
         String theName = (String) interfaces.get((Object)interfaceName);
         theInterface.put((Object)key,(Object)value);
     }
-   
+
     protected Object access(String key) {
         return dataMap.get(key);
     }
- 
+
     protected Object access(String key, String interfaceName) {
         // FIXME: error handling
         HashMap interfaces   = (HashMap) dataMap.get((Object) "interfaces");
         HashMap theInterface = (HashMap) interfaces.get((Object)interfaceName);
         return (Object) theInterface.get((Object)key);
     }
-   
+
     public String toString() {
         return getObjectType() + dataMap.toString();
     }

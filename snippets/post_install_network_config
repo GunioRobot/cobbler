@@ -4,7 +4,7 @@
     ## so we can do the more complex stuff
     ## get the list of interface names
     #set ikeys = $interfaces.keys()
-    #set osversion = $getVar("os_version","") 
+    #set osversion = $getVar("os_version","")
     #import re
     #set $vlanpattern = $re.compile("[a-zA-Z0-9]+\.[0-9]+")
     ## Determine if we should use the MAC address to configure the interfaces first
@@ -37,7 +37,7 @@
     #if $numbondingdevs > 0
 if [ -f "/etc/modprobe.conf" ]; then
     echo "options bonding max_bonds=$numbondingdevs" >> /etc/modprobe.conf
-fi 
+fi
     #end if
     ## =============================================================================
     ## create a staging directory to build out our network scripts into
@@ -238,7 +238,7 @@ echo "$network via $router" >> $routesfile
 	#end for
 	#set $i = $i + 1
 # End configuration for $iname
-    #end for	
+    #end for
     ## =============================================================================
     ## Configure name server search path in /etc/resolv.conf
     #set $num_ns = $len($name_servers)

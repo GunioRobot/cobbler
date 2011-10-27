@@ -1,4 +1,4 @@
- 
+
 .jsgrowl_msg_container{
   font-family: Arial, Helvetica, sans-serif;
   position:fixed;
@@ -85,7 +85,7 @@
 .jsgrowl_msg_container .jsg_mb{
   background-position: bottom right;
 }
- 
+
 .jsgrowl_msg_container:hover .jsg_corner {
   background-image:url(/cobbler_webui_content/jsgrowl_corners_hover.png) ;
 }
@@ -98,4 +98,4 @@
 .jsgrowl_msg_container:hover .jsg_close{
   background-image: url(/cobbler_webui_content/jsgrowl_close.png);
 }
- 
+

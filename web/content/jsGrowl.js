@@ -44,7 +44,7 @@ jsGrowlMsg.prototype = {
       '<tr><td class="jsg_side jsg_ml"></td><td class="jsg_body"><div class="jsg_body_container">'+
         '<div id="growl_flash_close_icon_'+this.id+'" title="Close Message" class="jsg_close" '+
         ' onclick="'+jsg+'.closeMsg('+this.id+')"></div>'+
-        title_html + icon_html + 
+        title_html + icon_html +
         '<div class="jsg_msg">'+this.msg+'</div>'+
       '</div></td><td class="jsg_side jsg_mr"></tr>'+
       '<tr><td class="jsg_corner jsg_bl"></td><td class="jsg_middle jsg_mb"></td><td class="jsg_corner jsg_br"></td></tr>'+
